@@ -1,4 +1,5 @@
 import { Card, Space, Tag, Typography } from 'antd'
+import { profile } from '../content/profile'
 
 export function AboutPage() {
   return (
@@ -20,13 +21,9 @@ export function AboutPage() {
 
       <Card title="Skills">
         <Space wrap>
-          <Tag>React</Tag>
-          <Tag>TypeScript</Tag>
-          <Tag>Redux / Zustand</Tag>
-          <Tag>React Query</Tag>
-          <Tag>Ant Design</Tag>
-          <Tag>Testing</Tag>
-          <Tag>CI/CD</Tag>
+          {profile.skills.map((s) => (
+            <Tag key={s}>{s}</Tag>
+          ))}
         </Space>
       </Card>
     </Space>

@@ -1,8 +1,8 @@
-import { GithubOutlined, LinkOutlined, MailOutlined } from '@ant-design/icons'
 import { Button, Layout, Menu, Space, Typography } from 'antd'
 import type { ItemType } from 'antd/es/menu/interface'
 import { useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { profile } from '../../content/profile'
 import type { ColorMode } from '../../shared/theme/useColorMode'
 
 const { Header, Content, Footer } = Layout
@@ -47,9 +47,9 @@ export function AppLayout({ mode, onToggleMode, children }: Props) {
         <div className="container" style={{ display: 'flex', alignItems: 'center' }}>
           <Space style={{ flex: '0 0 auto' }} size={10}>
             <Typography.Title level={4} style={{ margin: 0 }}>
-              Your Name
+              {profile.name}
             </Typography.Title>
-            <Typography.Text type="secondary">Frontend Developer</Typography.Text>
+            <Typography.Text type="secondary">{profile.role}</Typography.Text>
           </Space>
 
           <div style={{ flex: '1 1 auto' }} />
@@ -75,28 +75,15 @@ export function AppLayout({ mode, onToggleMode, children }: Props) {
       </Content>
 
       <Footer style={{ textAlign: 'center' }}>
-        <Space>
-          <Typography.Link href="mailto:you@example.com" target="_blank">
-            <Space size={6}>
-              <MailOutlined />
-              Email
-            </Space>
-          </Typography.Link>
-          <Typography.Link href="https://github.com/" target="_blank">
-            <Space size={6}>
-              <GithubOutlined />
-              GitHub
-            </Space>
-          </Typography.Link>
-          <Typography.Link href="https://www.linkedin.com/" target="_blank">
-            <Space size={6}>
-              <LinkOutlined />
-              LinkedIn
-            </Space>
-          </Typography.Link>
+        <Space wrap>
+          {profile.socials.map((s) => (
+            <Typography.Link key={s.label} href={s.href} target="_blank">
+              {s.label}
+            </Typography.Link>
+          ))}
         </Space>
         <div style={{ marginTop: 8, opacity: 0.7 }}>
-          © {new Date().getFullYear()} Your Name
+          © {new Date().getFullYear()} {profile.name}
         </div>
       </Footer>
     </Layout>

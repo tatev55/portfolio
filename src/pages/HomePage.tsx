@@ -1,18 +1,19 @@
 import { Button, Card, Col, Row, Space, Tag, Typography } from 'antd'
 import { Link } from 'react-router-dom'
+import { profile } from '../content/profile'
 
 export function HomePage() {
   return (
     <Space orientation="vertical" size={18} style={{ width: '100%' }}>
       <Card style={{ borderRadius: 16 }}>
         <Space orientation="vertical" size={10} style={{ width: '100%' }}>
-          <Tag color="blue">Available for freelance</Tag>
+          <Tag color="blue">{profile.availabilityBadge}</Tag>
           <Typography.Title style={{ margin: 0 }}>
-            Hi, I’m <span style={{ color: '#1677ff' }}>Your Name</span>.
+            {profile.headline.replace(profile.name, '')}
+            <span style={{ color: '#1677ff' }}>{profile.name}</span>.
           </Typography.Title>
           <Typography.Paragraph style={{ maxWidth: 820, marginBottom: 0 }}>
-            Frontend developer focused on React, TypeScript, UI systems, and building
-            fast, accessible products.
+            {profile.summary}
           </Typography.Paragraph>
           <Space wrap>
             <Button type="primary">
@@ -29,11 +30,9 @@ export function HomePage() {
         <Col xs={24} md={8}>
           <Card title="Stack">
             <Space wrap>
-              <Tag>React</Tag>
-              <Tag>TypeScript</Tag>
-              <Tag>Vite</Tag>
-              <Tag>Ant Design</Tag>
-              <Tag>pnpm</Tag>
+              {profile.skills.slice(0, 6).map((s) => (
+                <Tag key={s}>{s}</Tag>
+              ))}
             </Space>
           </Card>
         </Col>
@@ -47,7 +46,7 @@ export function HomePage() {
         <Col xs={24} md={8}>
           <Card title="Location / Remote">
             <Typography.Paragraph style={{ marginBottom: 0 }}>
-              Add your city + timezone here. Remote-friendly.
+              {profile.location}. Remote-friendly.
             </Typography.Paragraph>
           </Card>
         </Col>

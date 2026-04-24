@@ -1,29 +1,5 @@
 import { Card, Col, Row, Space, Tag, Typography } from 'antd'
-
-type Project = {
-  title: string
-  description: string
-  tags: string[]
-  link?: string
-}
-
-const PROJECTS: Project[] = [
-  {
-    title: 'Portfolio Starter',
-    description: 'This site — built with Vite, React, TypeScript, and Ant Design.',
-    tags: ['React', 'TypeScript', 'Antd'],
-  },
-  {
-    title: 'Admin Dashboard',
-    description: 'Tables, charts, filters, and role-based access patterns.',
-    tags: ['UI', 'Data', 'Performance'],
-  },
-  {
-    title: 'E-commerce UI',
-    description: 'Product list, cart, checkout, and SEO-friendly pages.',
-    tags: ['UX', 'Routing', 'State'],
-  },
-]
+import { profile } from '../content/profile'
 
 export function ProjectsPage() {
   return (
@@ -33,7 +9,7 @@ export function ProjectsPage() {
       </Typography.Title>
 
       <Row gutter={[16, 16]}>
-        {PROJECTS.map((p) => (
+        {profile.projects.map((p) => (
           <Col key={p.title} xs={24} md={12} lg={8}>
             <Card title={p.title} hoverable>
               <Typography.Paragraph style={{ marginBottom: 12 }}>

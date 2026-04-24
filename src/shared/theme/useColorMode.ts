@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from 'react'
 export type ColorMode = 'light' | 'dark'
 
 const STORAGE_KEY = 'portfolio:color-mode'
+const DATASET_KEY = 'theme'
 
 function getInitialMode(): ColorMode {
   const stored = localStorage.getItem(STORAGE_KEY)
@@ -16,6 +17,10 @@ export function useColorMode() {
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, mode)
+  }, [mode])
+
+  useEffect(() => {
+    document.documentElement.dataset[DATASET_KEY] = mode
   }, [mode])
 
   const algorithm = useMemo(() => {
