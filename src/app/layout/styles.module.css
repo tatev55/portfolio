@@ -1,0 +1,107 @@
+.layout {
+  min-height: 100%;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 12, 0.45);
+}
+
+.headerInner {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+
+.brand {
+  flex: 0 0 auto;
+}
+
+.brandTitle {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: linear-gradient(90deg, rgba(167, 139, 250, 0.95), rgba(255, 255, 255, 0.9));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nav {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  flex: 0 1 auto;
+  border-bottom: none;
+}
+
+.headerActions {
+  margin-left: 12px;
+}
+
+.iconButton {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 12px;
+  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.modeSwitch :global(.ant-btn[data-active='true']) {
+  border-color: rgba(167, 139, 250, 0.35);
+  background: rgba(167, 139, 250, 0.12);
+}
+
+/* Menu styles to match the design */
+.menu :global(.ant-menu) {
+  background: transparent;
+  border-bottom: none;
+  justify-content: center;
+}
+
+.menu :global(.ant-menu-item) {
+  color: rgba(255, 255, 255, 0.75);
+  padding-inline: 16px;
+  margin-inline: 6px;
+}
+
+.menu :global(.ant-menu-item-selected) {
+  color: rgba(255, 255, 255, 0.92);
+  background: transparent;
+}
+
+.menu :global(.ant-menu-item::after) {
+  inset-inline: 18px;
+  border-bottom-width: 2px;
+  border-bottom-color: rgba(167, 139, 250, 0.85);
+}
+
+.menu :global(.ant-menu-item:hover) {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.content {
+  padding: 28px 0 60px;
+}
+
+.footer {
+  text-align: center;
+}
+
+.copyright {
+  margin-top: 8px;
+  opacity: 0.7;
+}
+

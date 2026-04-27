@@ -1,12 +1,9 @@
-import { Button, Card, Form, Input, Space, Typography, message } from 'antd'
+import { Button, Card, Flex, Form, Input, Space, Typography, message } from 'antd'
+import type { FC } from 'react'
+import styles from './styles.module.css'
+import type { ContactFormValues, ContactPageProps } from './types'
 
-type ContactFormValues = {
-  name: string
-  email: string
-  message: string
-}
-
-export function ContactPage() {
+export const ContactPage: FC<ContactPageProps> = () => {
   const [api, contextHolder] = message.useMessage()
 
   const onFinish = async (values: ContactFormValues) => {
@@ -15,13 +12,11 @@ export function ContactPage() {
   }
 
   return (
-    <Space orientation="vertical" size={16} style={{ width: '100%' }}>
+    <Flex vertical gap={16} className={styles.root}>
       {contextHolder}
-      <Typography.Title level={2} style={{ margin: 0 }}>
-        Contact
-      </Typography.Title>
+      <Typography.Title level={2}>Contact</Typography.Title>
 
-      <Card style={{ maxWidth: 720 }}>
+      <Card className={styles.card}>
         <Form layout="vertical" onFinish={onFinish} requiredMark="optional">
           <Form.Item
             label="Name"
@@ -58,7 +53,7 @@ export function ContactPage() {
           </Space>
         </Form>
       </Card>
-    </Space>
+    </Flex>
   )
 }
 

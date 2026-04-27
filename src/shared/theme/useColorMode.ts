@@ -1,7 +1,6 @@
 import { theme } from 'antd'
 import { useEffect, useMemo, useState } from 'react'
-
-export type ColorMode = 'light' | 'dark'
+import type { ColorMode } from './types'
 
 const STORAGE_KEY = 'portfolio:color-mode'
 const DATASET_KEY = 'theme'
@@ -9,7 +8,7 @@ const DATASET_KEY = 'theme'
 function getInitialMode(): ColorMode {
   const stored = localStorage.getItem(STORAGE_KEY)
   if (stored === 'light' || stored === 'dark') return stored
-  return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  return 'dark'
 }
 
 export function useColorMode() {

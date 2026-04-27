@@ -1,0 +1,89 @@
+.wrap {
+  position: relative;
+  padding: 64px 0 36px;
+}
+
+.glow {
+  position: absolute;
+  inset: -80px -40px auto -40px;
+  height: 420px;
+  background:
+    radial-gradient(600px 260px at 20% 30%, rgba(140, 91, 255, 0.35), transparent 60%),
+    radial-gradient(520px 260px at 70% 40%, rgba(0, 217, 255, 0.2), transparent 60%),
+    radial-gradient(360px 240px at 35% 90%, rgba(122, 255, 196, 0.1), transparent 60%);
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.badge {
+  width: fit-content;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(120, 161, 255, 0.12);
+  border: 1px solid rgba(120, 161, 255, 0.18);
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 13px;
+}
+
+.title {
+  line-height: 1;
+}
+
+.titleLine {
+  margin: 0 !important;
+  font-size: 58px;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.titleAccent {
+  background: linear-gradient(90deg, #a78bfa 0%, #22d3ee 45%, #34d399 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 640px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.ctas :global(.ant-btn) {
+  border-radius: 14px;
+}
+
+.ctas :global(.ant-btn.ant-btn-primary).primaryCta {
+  box-shadow: 0 10px 30px rgba(140, 91, 255, 0.25);
+  background:
+    radial-gradient(500px 240px at 50% 25%, rgba(255, 255, 255, 0.12), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.primaryCtaLink {
+  color: inherit;
+}
+
+.secondaryCta {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+@media (max-width: 640px) {
+  .wrap {
+    padding: 44px 0 24px;
+  }
+
+  .titleLine {
+    font-size: 42px;
+  }
+}
+

@@ -1,0 +1,51 @@
+---
+description: React + antd project conventions (components, pages, CSS, TS)
+globs: "**/*.tsx"
+alwaysApply: false
+---
+
+# React + antd project rules
+
+## File + folder conventions
+
+- **One component per file** and **file name = component name**
+- **Pages**: `src/pages/FeatureName/index.tsx`
+- **Shared components**: `src/components/ComponentName/index.tsx`
+
+### Component folder shape
+
+When a component warrants a folder, use:
+
+```
+ComponentName/
+  index.tsx
+  styles.module.css
+  types.ts
+  utils.ts
+constant.ts
+```
+
+## UI (antd-first)
+
+- Prefer **antd components** over raw HTML.
+- Prefer these antd building blocks:
+  - `Typography`, `Flex`, `Space`, `Form`, `Button`, `Table`
+
+## CSS
+
+- **CSS last** and **minimal**
+- **No inline styles**; use `*.module.css`
+- **Do not style**: text, colors, spacing, buttons, forms
+- **Only style**: layout, container, images, responsive behavior
+
+## TypeScript + code style
+
+- Use **arrow functions**
+- Keep **strict TypeScript**
+- No `eslint-disable`
+
+## i18n
+
+- **No hardcoded UI text**
+- Use `useTranslation()` hook
+- All text via `t('key')`

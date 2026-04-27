@@ -1,7 +1,9 @@
 import { Button, Result } from 'antd'
+import type { FC } from 'react'
 import { Link } from 'react-router-dom'
+import type { NotFoundPageProps } from './types'
 
-export function NotFoundPage() {
+export const NotFoundPage: FC<NotFoundPageProps> = () => {
   return (
     <Result
       status="404"

@@ -1,0 +1,273 @@
+ .root {
+  width: 100%;
+  padding: 28px 0 40px;
+}
+
+.frame {
+  width: min(640px, 100%);
+  border-radius: 28px;
+  padding: 26px 26px 28px;
+  background: radial-gradient(120% 90% at 50% 0%, rgba(255, 255, 255, 0.06), transparent 55%),
+    radial-gradient(90% 90% at 0% 40%, rgba(255, 255, 255, 0.05), transparent 55%),
+    radial-gradient(90% 90% at 100% 40%, rgba(255, 255, 255, 0.04), transparent 55%),
+    linear-gradient(180deg, #0c0d10 0%, #07070a 100%);
+  box-shadow:
+    0 18px 60px rgba(0, 0, 0, 0.65),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.headerText {
+  min-width: 0;
+}
+
+.title {
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.4px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.96);
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.headerIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 10px 26px rgba(0, 0, 0, 0.45);
+  color: #caa7ff;
+  font-size: 18px;
+}
+
+.section {
+  margin-top: 18px;
+}
+
+.sectionLabel {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42);
+  margin: 0 0 10px;
+}
+
+.sectionHeaderRow {
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.textareaCard {
+  border-radius: 18px;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.32);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.textarea {
+  width: 100%;
+  height: 148px;
+  resize: none;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 0;
+}
+
+.textarea::placeholder {
+  color: rgba(255, 255, 255, 0.22);
+}
+
+.copyLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #27d8ff;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition: color 160ms ease, transform 160ms ease, opacity 160ms ease;
+}
+
+.copyLinkCopied {
+  color: rgba(120, 255, 210, 0.95);
+  transform: translateY(-0.5px);
+}
+
+.copyLink:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.outputCard {
+  border-radius: 18px;
+  padding: 18px 18px 22px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.outputText {
+  font-size: 14px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.outputCard[data-empty='false'] .outputText {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.outputMarkdown {
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.86);
+  word-break: break-word;
+}
+
+.outputMarkdown :where(p) {
+  margin: 0.5em 0;
+}
+
+.outputMarkdown :where(p:first-child) {
+  margin-top: 0;
+}
+
+.outputMarkdown :where(p:last-child) {
+  margin-bottom: 0;
+}
+
+.outputMarkdown :where(ul, ol) {
+  margin: 0.6em 0 0.6em 1.25em;
+  padding: 0;
+}
+
+.outputMarkdown :where(li) {
+  margin: 0.25em 0;
+}
+
+.outputMarkdown :where(a) {
+  color: #27d8ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.outputMarkdown :where(code) {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-size: 0.92em;
+  padding: 0.1em 0.35em;
+  border-radius: 8px;
+  background: rgba(0, 0,  0, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.outputMarkdown :where(pre) {
+  margin: 0.8em 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.25);
+  overflow: auto;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.outputMarkdown :where(pre code) {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.outputMarkdown :where(blockquote) {
+  margin: 0.75em 0;
+  padding: 0 0 0 12px;
+  border-left: 3px solid rgba(39, 216, 255, 0.7);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.outputUnderline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #27d8ff 0%, #8a6bff 45%, #c14dff 100%);
+  opacity: 0.95;
+}
+
+.ctaRow {
+  margin-top: 22px;
+}
+
+.ctaButton {
+  width: 100%;
+  height: 62px;
+  border-radius: 18px;
+  border: 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  color: #2b0a66;
+  letter-spacing: 0.1px;
+  background: linear-gradient(90deg, #b79bff 0%, #8b6bff 50%, #7a4cff 100%);
+  box-shadow:
+    0 18px 40px rgba(122, 76, 255, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.10);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ctaIcon {
+  font-size: 18px;
+  color: rgba(43, 10, 102, 0.95);
+}
+
+.ctaIconLoading {
+  opacity: 0.6;
+}
+
+.ctaButton:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 480px) {
+  .frame {
+    border-radius: 24px;
+    padding: 22px 18px 24px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+}
+
