@@ -9,7 +9,8 @@
   padding: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px);
-  background: rgba(10, 10, 12, 0.45);
+  /* background: rgba(10, 10, 12, 0.45); */
+  background: #212B34;
 }
 
 .headerInner {
@@ -43,6 +44,7 @@
 .menu {
   flex: 0 1 auto;
   border-bottom: none;
+  background: none;
 }
 
 .headerActions {
@@ -78,7 +80,8 @@
 }
 
 .menu :global(.ant-menu-item-selected) {
-  color: rgba(255, 255, 255, 0.92);
+  color: #577B7F;
+  /* color: #657B79; */
   background: transparent;
 }
 
@@ -92,9 +95,6 @@
   color: rgba(255, 255, 255, 0.92);
 }
 
-.content {
-  padding: 28px 0 60px;
-}
 
 .footer {
   text-align: center;

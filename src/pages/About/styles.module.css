@@ -1,42 +1,28 @@
-.root {
-  width: 100%;
+:root[data-theme="dark"] .page {
+  --about-bg: #0d1117;
+  --about-card: #161b22;
+  --about-border: rgba(255, 255, 255, 0.08);
+  --about-text: rgba(255, 255, 255, 0.92);
+  --about-muted: rgba(255, 255, 255, 0.62);
 }
 
-.aboutMarkdown {
-  color: rgba(255, 255, 255, 0.86);
-  line-height: 1.6;
+:root[data-theme="light"] .page {
+  --about-bg: #f6f8fa;
+  --about-card: #ffffff;
+  --about-border: rgba(15, 23, 42, 0.1);
+  --about-text: #0f172a;
+  --about-muted: rgba(15, 23, 42, 0.72);
 }
 
-.aboutMarkdown :where(h2) {
-  margin: 0 0 0.5em;
+.page {
+  background: var(--about-bg);
+  min-height: min(100%, 100vh);
 }
 
-.aboutMarkdown :where(h3) {
-  margin: 1em 0 0.5em;
+.wrap {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vw, 40px);
 }
-
-.aboutMarkdown :where(p) {
-  margin: 0.6em 0;
-}
-
-.aboutMarkdown :where(ul, ol) {
-  margin: 0.6em 0 0.6em 1.25em;
-  padding: 0;
-}
-
-.aboutMarkdown :where(a) {
-  color: #27d8ff;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.aboutMarkdown :where(code) {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  font-size: 0.92em;
-  padding: 0.1em 0.35em;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.22);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
-}
-

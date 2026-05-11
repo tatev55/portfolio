@@ -21,8 +21,6 @@ export const AppLayout: FC<AppLayoutProps> = ({ mode, onSetMode, children }) => 
     if (path === '/') return ['home']
     if (path.startsWith('/about')) return ['about']
     if (path.startsWith('/projects')) return ['projects']
-    if (path.startsWith('/skills')) return ['skills']
-    if (path.startsWith('/innovation-hub')) return ['innovationHub']
     if (path.startsWith('/gemini')) return ['gemini']
     return []
   }, [location.pathname])
@@ -31,11 +29,6 @@ export const AppLayout: FC<AppLayoutProps> = ({ mode, onSetMode, children }) => 
     { key: 'home', label: <Link to="/">{t('nav.home')}</Link> },
     { key: 'about', label: <Link to="/about">{t('nav.about')}</Link> },
     { key: 'projects', label: <Link to="/projects">{t('nav.projects')}</Link> },
-    { key: 'skills', label: <Link to="/skills">{t('nav.skills')}</Link> },
-    {
-      key: 'innovationHub',
-      label: <Link to="/innovation-hub">{t('nav.innovationHub')}</Link>,
-    },
     {
       key: 'gemini',
       label: <Link to="/gemini">{t('nav.gemini')}</Link>,
@@ -114,7 +107,7 @@ export const AppLayout: FC<AppLayoutProps> = ({ mode, onSetMode, children }) => 
       <Footer className={styles.footer}>
         <Space wrap>
           {profile.socials.map((s) => (
-            <Typography.Link key={s.label} href={s.href} target="_blank">
+            <Typography.Link key={s.label} href={s.href} target="_blank" className={styles.link}>
               {s.label}
             </Typography.Link>
           ))}

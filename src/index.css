@@ -11,7 +11,6 @@ body {
 
 /* Small global helpers (keep minimal; let Antd handle most UI) */
 .container {
-  width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
 }
 

@@ -1,0 +1,24 @@
+.card {
+  border-radius: 16px;
+  background: var(--about-card);
+  border: 1px solid var(--about-border);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+.card :global(.ant-card-body) {
+  padding: clamp(22px, 3vw, 28px);
+}
+
+.sectionHeading {
+  margin: 0 0 14px !important;
+  font-size: 20px !important;
+  font-weight: 650 !important;
+  color: var(--about-text) !important;
+}
+
+.sectionBody {
+  margin: 0 !important;
+  color: var(--about-muted);
+  font-size: 15px;
+  line-height: 1.65;
+}

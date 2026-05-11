@@ -1,46 +1,19 @@
-import { Card, Flex, Space, Tag, Typography } from 'antd'
-import type { FC } from 'react'
-import {  useState } from 'react'
-import ReactMarkdown from 'react-markdown'
-import { useTranslation } from 'react-i18next'
-import { profile } from '../../content/profile'
-import { DEFAULT_ABOUT_TEXT_MD } from './aboutText'
-import styles from './styles.module.css'
-import type { AboutPageProps } from './types'
+import type { FC } from "react";
+import portrait from "../../assets/aboutImg.jpg";
+import { AboutHero } from "./components/AboutHero";
+import { MeetMyVirtualSelfSection } from "./components/MeetMyVirtualSelfSection";
+import { PhilosophySection } from "./components/PhilosophySection";
+import { SkillSetSection } from "./components/SkillSetSection";
+import type { AboutPageProps } from "./types";
+import styles from "./styles.module.css";
 
-const STORAGE_KEY = 'portfolio.gemini.latestResponse'
-
-export const AboutPage: FC<AboutPageProps> = () => {
-  const { t } = useTranslation()
-
-  const [savedText] = useState<string | null>(() => {
-    try {
-      const v = localStorage.getItem(STORAGE_KEY)
-      return v && v.trim().length > 0 ? v : null
-    } catch {
-      return null
-    }
-  })
-
-  const aboutText = savedText ?? DEFAULT_ABOUT_TEXT_MD
-
-  return (
-    <Flex vertical gap={16} className={styles.root}>
-      <Typography.Title level={2}>{t('about.title')}</Typography.Title>
-
-      <Card>
-        <div className={styles.aboutMarkdown}>
-          <ReactMarkdown>{aboutText}</ReactMarkdown>
-        </div>
-      </Card>
-
-      <Card title={t('nav.skills')}>
-        <Space wrap>
-          {profile.skills.map((s) => (
-            <Tag key={s}>{s}</Tag>
-          ))}
-        </Space>
-      </Card>
-    </Flex>
-  )
-}
+export const AboutPage: FC<AboutPageProps> = () => (
+  <div className={styles.page}>
+    <div className={styles.wrap}>
+      <AboutHero portraitSrc={portrait} />
+      <PhilosophySection />
+      <SkillSetSection />
+      <MeetMyVirtualSelfSection />
+    </div>
+  </div>
+);

@@ -4,7 +4,7 @@ export const getAntdTheme = (algorithm: ThemeConfig['algorithm']): ThemeConfig =
   return {
     algorithm,
     token: {
-      colorPrimary: '#1677ff',
+      colorPrimary: '#577B7F',
       borderRadius: 10,
     },
   }
