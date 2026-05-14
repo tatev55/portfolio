@@ -2,15 +2,20 @@
   position: relative;
   overflow: hidden;
   border-radius: 16px;
-  background:
-    radial-gradient(
-      circle at top left,
-      rgba(66, 153, 225, 0.12),
-      transparent 42%
-    ),
-    linear-gradient(180deg, #1f2937 0%, #111827 100%);
   border: 1px solid var(--about-border);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+:root[data-theme="light"] .card {
+  background:
+    radial-gradient(circle at top left, rgba(212, 163, 158, 0.2), transparent 42%),
+    linear-gradient(180deg, #faf6f2 0%, #ede6e0 100%);
+}
+
+:root[data-theme="dark"] .card {
+  background:
+    radial-gradient(circle at top left, rgba(232, 184, 178, 0.12), transparent 42%),
+    linear-gradient(180deg, #3a3436 0%, #262223 100%);
 }
 
 .card :global(.ant-card-body) {
@@ -24,12 +29,19 @@
   top: -0.08em;
   right: 0.04em;
   z-index: 0;
-  color: rgba(66, 153, 225, 0.14);
   font-size: clamp(7rem, 18vw, 11rem);
   font-weight: 700;
   line-height: 1;
   pointer-events: none;
   user-select: none;
+}
+
+:root[data-theme="light"] .watermark {
+  color: rgba(212, 163, 158, 0.16);
+}
+
+:root[data-theme="dark"] .watermark {
+  color: rgba(232, 184, 178, 0.12);
 }
 
 .sectionHeading {
@@ -59,7 +71,7 @@
 
 .quoteMark {
   flex: 0 0 auto;
-  color: #ed8936;
+  color: #d4a39e;
   font-size: 22px;
   font-weight: 700;
   line-height: 1.2;
@@ -68,7 +80,7 @@
 .arrowIcon {
   flex: 0 0 auto;
   margin-top: 3px;
-  color: #4299e1;
+  color: #8c8681;
   font-size: 14px;
 }
 

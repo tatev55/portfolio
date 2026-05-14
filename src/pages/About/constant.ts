@@ -71,7 +71,7 @@ export const SKILL_ITEMS: SkillItem[] = [
   {
     label: "Next.js",
     progress: 86,
-    ringColor: "#e2e8f0",
+    ringColor: '#c8938e',
     iconSlug: "nextdotjs",
   },
   {

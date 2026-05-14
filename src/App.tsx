@@ -5,10 +5,10 @@ import { getAntdTheme } from './shared/theme/theme'
 import { useColorMode } from './shared/theme/useColorMode'
 
 const App = () => {
-  const { mode, setMode, algorithm } = useColorMode()
+  const { mode, setMode } = useColorMode()
 
   return (
-    <ConfigProvider theme={getAntdTheme(algorithm)}>
+    <ConfigProvider theme={getAntdTheme(mode)}>
       <AppLayout
         mode={mode}
         onSetMode={(next) => setMode(next)}

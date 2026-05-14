@@ -29,7 +29,7 @@
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--about-border);
-  background: #0a0f17;
+  background: var(--about-video-bg);
   max-width: min(560px, 100%);
   margin: 0 auto 22px;
   aspect-ratio: 16 / 9;
@@ -77,7 +77,7 @@
   display: grid;
   place-items: center;
   background: rgba(255, 255, 255, 0.94);
-  color: #0d1117;
+  color: var(--about-text);
   font-size: 28px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
   position: absolute;
@@ -120,7 +120,7 @@
 }
 
 :root[data-theme="light"] .responseBox {
-  background: rgba(15, 23, 42, 0.035);
+  background: var(--about-response-light);
 }
 
 .responseHeading {
@@ -178,5 +178,5 @@
   padding: 0 !important;
   height: auto !important;
   font-size: 13px;
-  color: rgba(167, 139, 250, 0.95) !important;
+  color: var(--about-link) !important;
 }

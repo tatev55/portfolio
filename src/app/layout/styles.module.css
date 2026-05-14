@@ -7,10 +7,9 @@
   top: 0;
   z-index: 10;
   padding: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--layout-header-border);
   backdrop-filter: blur(10px);
-  /* background: rgba(10, 10, 12, 0.45); */
-  background: #212B34;
+  background: var(--layout-header-bg);
 }
 
 .headerInner {
@@ -29,7 +28,7 @@
   margin: 0;
   font-weight: 600;
   letter-spacing: -0.02em;
-  background: linear-gradient(90deg, rgba(167, 139, 250, 0.95), rgba(255, 255, 255, 0.9));
+  background: linear-gradient(90deg, var(--layout-brand-start), var(--layout-brand-end));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -56,17 +55,16 @@
   height: 36px;
   padding: 0;
   border-radius: 12px;
-  border-color: rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.03);
-  color: rgba(255, 255, 255, 0.8);
+  border-color: var(--layout-icon-border);
+  background: var(--layout-icon-bg);
+  color: var(--layout-icon-color);
 }
 
 .modeSwitch :global(.ant-btn[data-active='true']) {
-  border-color: rgba(167, 139, 250, 0.35);
-  background: rgba(167, 139, 250, 0.12);
+  border-color: var(--layout-mode-active-border);
+  background: var(--layout-mode-active-bg);
 }
 
-/* Menu styles to match the design */
 .menu :global(.ant-menu) {
   background: transparent;
   border-bottom: none;
@@ -74,27 +72,25 @@
 }
 
 .menu :global(.ant-menu-item) {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--layout-nav-text);
   padding-inline: 16px;
   margin-inline: 6px;
 }
 
 .menu :global(.ant-menu-item-selected) {
-  color: #577B7F;
-  /* color: #657B79; */
+  color: var(--layout-nav-active);
   background: transparent;
 }
 
 .menu :global(.ant-menu-item::after) {
   inset-inline: 18px;
   border-bottom-width: 2px;
-  border-bottom-color: rgba(167, 139, 250, 0.85);
+  border-bottom-color: var(--layout-nav-underline);
 }
 
 .menu :global(.ant-menu-item:hover) {
-  color: rgba(255, 255, 255, 0.92);
+  color: var(--layout-nav-text-hover);
 }
-
 
 .footer {
   text-align: center;
@@ -104,4 +100,3 @@
   margin-top: 8px;
   opacity: 0.7;
 }
-

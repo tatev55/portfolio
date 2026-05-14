@@ -34,16 +34,16 @@
   background:
     linear-gradient(
       90deg,
-      rgba(13, 13, 13, 0.94) 0%,
-      rgba(13, 13, 13, 0.82) 28%,
-      rgba(13, 13, 13, 0.45) 55%,
-      rgba(13, 13, 13, 0.28) 100%
+      var(--home-overlay-a) 0%,
+      var(--home-overlay-b) 28%,
+      var(--home-overlay-c) 55%,
+      var(--home-overlay-h-end) 100%
     ),
     linear-gradient(
       180deg,
-      rgba(8, 8, 8, 0.55) 0%,
-      transparent 42%,
-      rgba(8, 8, 8, 0.65) 100%
+      var(--home-overlay-d) 0%,
+      var(--home-overlay-v-mid) 42%,
+      var(--home-overlay-f) 100%
     );
 }
 
@@ -64,7 +64,7 @@
   font-weight: 700 !important;
   line-height: 1.05 !important;
   letter-spacing: -0.03em !important;
-  color: #ffffff !important;
+  color: var(--home-heading) !important;
 }
 
 .animHeroImg {
@@ -105,8 +105,8 @@
 .cv {
   width: 300px;
   height: 50px;
-  color: #ffff;
-  background-color: #657b79;
+  color: var(--home-cta-color);
+  background-color: var(--home-cta-bg);
   border: 0;
   border-radius: 30px;
   cursor: pointer;
@@ -118,8 +118,8 @@
 
 .cv:hover {
   transform: translate3d(0, -2px, 0);
-  background-color: #6f8785;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+  background-color: var(--home-cta-bg-hover);
+  box-shadow: 0 10px 24px var(--home-cta-shadow);
 }
 
 .cv:active {

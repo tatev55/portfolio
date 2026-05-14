@@ -3,13 +3,6 @@ export type SocialLink = {
   href: string
 }
 
-export type Project = {
-  title: string
-  description: string
-  tags: string[]
-  href?: string
-}
-
 export const profile = {
   name: 'Your Name',
   role: 'Frontend Developer',
@@ -32,22 +25,5 @@ export const profile = {
     'Performance',
     'Accessibility',
   ],
-  projects: [
-    {
-      title: 'Portfolio Starter',
-      description: 'This site — built with Vite, React, TypeScript, and Ant Design.',
-      tags: ['React', 'TypeScript', 'Antd'],
-    },
-    {
-      title: 'Admin Dashboard',
-      description: 'Tables, charts, filters, and role-based access patterns.',
-      tags: ['UI', 'Data', 'Performance'],
-    },
-    {
-      title: 'E-commerce UI',
-      description: 'Product list, cart, checkout, and SEO-friendly pages.',
-      tags: ['UX', 'Routing', 'State'],
-    },
-  ] satisfies Project[],
 } as const
 

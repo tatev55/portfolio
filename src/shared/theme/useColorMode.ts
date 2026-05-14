@@ -1,5 +1,4 @@
-import { theme } from 'antd'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { ColorMode } from './types'
 
 const STORAGE_KEY = 'portfolio:color-mode'
@@ -22,10 +21,6 @@ export function useColorMode() {
     document.documentElement.dataset[DATASET_KEY] = mode
   }, [mode])
 
-  const algorithm = useMemo(() => {
-    return mode === 'dark' ? theme.darkAlgorithm : theme.defaultAlgorithm
-  }, [mode])
-
-  return { mode, setMode, algorithm }
+  return { mode, setMode }
 }
 

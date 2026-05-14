@@ -23,6 +23,21 @@ const resources = {
       about: {
         title: "About",
       },
+      projects: {
+        featuredTitle: "Featured Works",
+        filters: {
+          all: "All",
+          react: "React",
+          javascript: "JavaScript",
+          typescript: "TypeScript",
+          htmlCss: "HTML / CSS",
+        },
+        liveDemo: "Live Demo",
+        sourceCode: "Source code",
+        privateRepo: "This repository is private.",
+        groupProject: "Group project",
+        empty: "No projects match this filter.",
+      },
       gemini: {
         title: "Cover Letter Architect",
         subtitle: "Tailor your pitch using job-specific keywords.",
@@ -111,6 +126,21 @@ const resources = {
       },
       about: {
         title: "Обо мне",
+      },
+      projects: {
+        featuredTitle: "Избранные работы",
+        filters: {
+          all: "Все",
+          react: "React",
+          javascript: "JavaScript",
+          typescript: "TypeScript",
+          htmlCss: "HTML / CSS",
+        },
+        liveDemo: "Демо",
+        sourceCode: "Исходный код",
+        privateRepo: "Репозиторий приватный.",
+        groupProject: "Групповой проект",
+        empty: "Нет проектов для выбранного фильтра.",
       },
       gemini: {
         title: "Архитектор сопроводительных писем",

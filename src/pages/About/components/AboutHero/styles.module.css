@@ -9,7 +9,7 @@
 .avatarWrapper {
   width: 250px;
   height: 340px;
-  border: 2px solid rgba(203, 213, 225, 0.45);
+  border: 2px solid rgba(212, 163, 158, 0.35);
   border-radius: 30px;
   position: relative;
 }
@@ -19,7 +19,7 @@
   height: 100%;
   border-radius: 30px;
   margin-right: 20px;
-  border: 5px solid rgba(203, 213, 225, 0.45);
+  border: 5px solid rgba(212, 163, 158, 0.35);
   object-fit: contain;
   position: absolute;
     left: 20px;
